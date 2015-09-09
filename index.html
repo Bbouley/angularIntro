@@ -6,10 +6,21 @@
 </head>
 <body>
 
-  <p>{{ 1 + 6 }}</p>
-
   <p>Say something to the world <input type = 'text' ng-model = 'greeting' ng-init= 'greeting="hello, "'></p>
   <p>{{greeting}} world!</p>
+
+  <p>Insert Name: </p>
+  <input type = 'text' placeholder = 'What is your name?' ng-model = 'name'>
+
+  <select ng-model = 'animal'>
+    <option value="Dogs">Dogs</option>
+    <option value="Cats">Cats</option>
+    <option value="Dogs and Cats">Dogs and Cats</option>
+    <option value="Neither">Neither</option>
+  </select>
+
+  <h1> My name is: {{name}}</h1>
+  <h2> I Love {{animal}} &#60;3</h2>
 
 <script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
 </body>
