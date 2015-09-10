@@ -9,6 +9,8 @@
   <p>Say something to the world <input type = 'text' ng-model = 'greeting' ng-init= 'greeting="hello, "'></p>
   <p>{{greeting}} world!</p>
 
+  <hr>
+
   <p>Insert Name: </p>
   <input type = 'text' placeholder = 'What is your name?' ng-model = 'name'>
 
@@ -19,20 +21,60 @@
     <option value="Neither">Neither</option>
   </select>
 
+  <h2> My name is: {{name}}</h2>
+  <h2> I Like {{animal}}</h2>
+
+  <hr>
+
   <p> 1+2 = {{1+2}}</p>
   <p>My Name is {{'Bojack' + 'Horseman'}}</p>
   <p>The Array [99,43,22] is {{[99,43,22].length}} items long</p>
 
   <p>{{3.14159265359 | currency: '€'}}</p>
 
-  <h1> My name is: {{name}}</h1>
-  <h2> I Love {{animal}} &#60;3</h2>
+  <hr>
 
-  <h4>What You Saying?</h4>
+  <h2>What You Saying?</h2>
   <input type = 'text' placeholder = 'Say Something bro!!' ng-model = 'word'>
-  <p ng-class= 'bold:important'>Yelling: {{word | uppercase }}</p>
+  <p>Yelling: {{word | uppercase}}</p>
   <p>Whispering: {{word | lowercase}}
-</p>
+  </p>
+
+  <hr>
+
+  <h2> How many pi digits do you want?</h2>
+  <select ng-model = 'pi'>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+  </select>
+  <p>Here you go, the first {{pi}} digits of pi! <br>{{3.14159265359 | number:pi }}</p>
+
+  <hr>
+
+  <h2>Super Useful Tip Calculator</h2>
+
+  <p>How much did your meal cost? <input type = 'number' ng-model= 'total'></p>
+
+  <p>How much do you want to tip?</p>
+
+  <select ng-model = 'tipPercent'>
+    <option value="10">10%</option>
+    <option value="15">15%</option>
+    <option value="20">20%</option>
+    <option value="25">25%</option>
+    <option value="30">30%</option>
+  </select>
+
+  <h3>Subtotal : {{total | currency}}</h3>
+
+  <h3>Tip : {{ total/100 * tipPercent | currency}}</h3>
+
+  <hr>
 
 <script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
 </body>
