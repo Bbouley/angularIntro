@@ -16,10 +16,17 @@
   - The ```ng``` stands for Angular, and the built-in directives use that prefix. ng-app auto-bootstraps and AngularJS application. It designates the root elemnt of the application
 
 ###5. What does ```ng-model``` do?
+  - This binds an ```input```, ```select```, ```textarea``` (custom form control) to a property on the scope
+  - It evaluates the expression on the current scope and binds to the property. If property doesn't already exist on this scope, it is created implicitly and added to scope
 
 ###6. What is 'dirty checking'?
+  - It is a cycle. Angular checks any changes to variables watched by $scopes.
+  - If there is a $scope.myVar defined in controller then you are telling Angular to monitor changes on myVar in each loop iteration
 
 ###7. What are those ```{{ }}``` expressions?
+ - They're used for witing things to HTML once you've written a directive and set attributes.
 
 ###8. Explain what two-way data binding is?
+ - This means that when properties in the model get updated, the UI also get's updated
+ - It also works so when the UI gets updated the changes are propagated back to the model
 

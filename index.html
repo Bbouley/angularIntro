@@ -19,8 +19,20 @@
     <option value="Neither">Neither</option>
   </select>
 
+  <p> 1+2 = {{1+2}}</p>
+  <p>My Name is {{'Bojack' + 'Horseman'}}</p>
+  <p>The Array [99,43,22] is {{[99,43,22].length}} items long</p>
+
+  <p>{{3.14159265359 | currency: '€'}}</p>
+
   <h1> My name is: {{name}}</h1>
   <h2> I Love {{animal}} &#60;3</h2>
+
+  <h4>What You Saying?</h4>
+  <input type = 'text' placeholder = 'Say Something bro!!' ng-model = 'word'>
+  <p ng-class= 'bold:important'>Yelling: {{word | uppercase }}</p>
+  <p>Whispering: {{word | lowercase}}
+</p>
 
 <script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
 </body>
