@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app = 'myApp'>
 <head>
   <meta charset="UTF-8">
   <title>{{greeting}} World</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-<div class = 'container'>
+  <div class = 'container'>
+
   <p>Say something to the world <input type = 'text' ng-model = 'greeting' ng-init= 'greeting="hello, "'></p>
   <p>{{greeting}} world!</p>
 
@@ -106,12 +108,80 @@
     </div>
   </form>
 
-  <h3 class = 'col-xs-offset-1 col-xs-10'>That is {{madlibsName}}. They are so super {{madlibsAdjective}}.
+  <h3>That is {{madlibsName}}. They are so super {{madlibsAdjective}}.
   He has so many {{madlibsPluralNoun}}. I think that he likes {{madlibsAnimal}}. But I Hate {{madlibsAnimal}}. I think he just wants to play with his {{madlibsPluralNoun2}} all day. I just want him to {{madlibsVerb}}.</h3>
 
   <hr>
 
-</div>
-<script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
+  <h2> Names </h2>
+
+    <div ng-controller = 'mainController'>
+
+    <h4>Repeat on li in ul</h4>
+      <ul>
+        <li  ng-repeat = 'name in names'>{{name}}</li>
+      </ul>
+
+    <h4>Repeat on ul with name in li</h4>
+      <ul ng-repeat = 'name in names'>
+        <li>{{name}}</li>
+      </ul>
+
+    <h4>Symbols</h4>
+      <ul ng-repeat = 'symbol in symbols'>
+        <li>{{symbol}}</li>
+      </ul>
+
+ <!-- (ng-bind-html) to use to get symbols to display correctly, needs $sce to work correctly.
+    <h4>Number</h4>
+      <ul ng-repeat = 'number in duplicates'>
+        <li>{{number}}</li>
+      </ul> -->
+
+    <h4>Object</h4>
+      <ul ng-repeat = 'key in testObject'>
+        <li>{{key}}</li>
+      </ul>
+
+    </div>
+
+    <hr>
+
+    <h2> Show and Hide</h2>
+
+    <div ng-show="3 + 4 == 5">
+      3 + 4 isn't 5, don't show
+    </div>
+
+    <div ng-show="3 + 4 == 7">
+      3 + 4 is 7, do show
+    </div>
+
+    <div ng-hide="3 + 4 == 5">
+        3 + 4 isn't 5, don't hide
+    </div>
+
+    <div ng-hide="3 + 4 == 7">
+      3 + 4 is 7, do hide
+    </div>
+
+    <h4>Sign Up</h4>
+    <div class = 'error' ng-class = '{okay: password.length>=6}'>
+      <input type = 'password' ng-model = 'password'>
+        <p> Your password is {{password.length}} characters</p>
+    </div>
+    <div ng-show = 'password.length >= 6 '>
+      <button type = 'btn btn-default'>Sign In</button>
+    </div>
+    <div ng-hide = 'password.length >= 6'>
+      <p> Too few letters there buddy!!</p>
+    </div>
+
+
+
+  </div>
+
+  <script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js'></script>
+   <script type="text/javascript" src = 'main.js'></script>
 </body>
 </html>
