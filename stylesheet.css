@@ -5,3 +5,12 @@
 .okay{
   color:green;
 }
+
+.smallPic{
+  height: auto;
+  width: 200px
+}
+
+.sale{
+  color: orange;
+}

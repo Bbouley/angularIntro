@@ -166,7 +166,9 @@
     </div>
 
     <h4>Sign Up</h4>
+
     <div class = 'error' ng-class = '{okay: password.length>=6}'>
+
       <input type = 'password' ng-model = 'password'>
         <p> Your password is {{password.length}} characters</p>
     </div>
@@ -177,6 +179,32 @@
       <p> Too few letters there buddy!!</p>
     </div>
 
+    <hr>
+
+    <h2>Camera Shop</h2>
+
+    <div ng-controller = 'mainController'>
+
+     <select ng-model = 'cameraFilter'>
+      <option value="rating">Rating</option>
+      <option value="price">Price</option>
+     </select>
+
+     <br>
+
+    <div ng-repeat = 'camera in cameras | orderBy: cameraFilter' class = 'col-xs-4'>
+      <h4>{{camera.title}}</h4>
+      <p>Rating: {{camera.rating}}</p>
+      <div ng-if='camera.onSale == true'>
+        <p ng-class='{sale: camera.onSale}'>Price: {{camera.price | currency}} ON SALE!!!!</p>
+      </div>
+       <div ng-if='camera.onSale == false'>
+        <p ng-class='{sale: camera.onSale}'>Price: {{camera.price | currency}}</p>
+      </div>
+      <img class = 'smallPic' ng-src = '{{camera.image}}'>
+    </div>
+
+    </div>
 
 
   </div>
