@@ -30,3 +30,32 @@
  - This means that when properties in the model get updated, the UI also get's updated
  - It also works so when the UI gets updated the changes are propagated back to the model
 
+ ###9. What are angular expressions?
+  - They are javascript-like code snippets that you can place in bindings. e.g. ```{{ 2 + 4 }}``` These can then be evaluated by angular
+
+ ###10. What happens writing invalid code in an expression?
+  - The program will print out exactly what is in the binding and not evaluate what's contained inside. So, using example above, if you entered ```{{ 2 + | }}``` the program prints out exactly that in the html
+  - It also causes all the other expressions in bindings to fail and the program will simply print out the curly braces directly onto the page
+
+ ###11. What are angular filters? Name 4 built in filters.
+  - It is a filter for a single piece of model data that edits the data before exposing it to the view. (namely, us)
+  - It isn't a loop, it is used for a specific piece of model data
+  - 4 of the built in filters are:
+    - currency
+    - number
+    - date
+    - json
+
+
+ ###12. What's the syntax for filters?
+  - ```{{ expression | filter }}```
+
+ ###13. Can you use more than one filter?
+  - Yes, filters can be chained using the following syntax:
+    ```{{ expression | filter1 | filter2 ...}}```
+
+ ###14. What is a use case for a custom filter?
+  - If the filter is not going to be a single-use filter then it can be very valuable to use a custom filter that can then be used multiplpe times throughout the program
+
+
+
