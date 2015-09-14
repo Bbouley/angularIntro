@@ -225,6 +225,22 @@
       <h2>The Time Right Now is : {{timeNow |date: 'dd-MM-yyyy HH:mm:ss'}}</h2>
     </div>
 
+    <hr>
+
+    <h2>Angular Functions</h2>
+
+    <div ng-controller = 'thirdController'>
+      <h2>The number is : {{number}}</h2>
+      <button class = 'btn btn-default' ng-click='pickRandomNumber()'>Pick Random Number</button>
+      <br>
+      <br>
+
+      <input type="text" class="form-control" ng-model = 'stringInput' placeholder="Reverse Word">
+      <p>Your word is : {{stringInput}}</p>
+      <button class = 'btn btn-default' ng-click='reverseString(stringInput)'>Reverse Word</button>
+
+    </div>
+
 
   </div>
 

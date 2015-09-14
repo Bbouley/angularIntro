@@ -44,6 +44,25 @@ var madlibsControllerFunction = function($scope){
   $scope.madlibs = {madlibsName : '', madlibsAdjective : '', madlibsPluralNoun : '', madlibsAnimal : '', madlibsPluralNoun2 : '', madlibsVerb : ''};
 };
 
+var thirdControllerFunction = function($scope){
+  $scope.number = 5;
+  $scope.pickRandomNumber = function(){
+    $scope.number = Math.floor(Math.random()*10)+1;
+  };
+  $scope.stringInput = '';
+  $scope.reverseString = function(string){
+    var array = string.split('');
+    var reverseArray = [];
+    for (var i = array.length-1; i >= 0; i--) {
+      reverseArray.push(array[i]);
+    }
+    var wordReversed = reverseArray.join('');
+    $scope.stringInput = wordReversed;
+  };
+};
+
+app.controller('thirdController', ['$scope', thirdControllerFunction]);
+
 app.controller('madlibsController', ['$scope', madlibsControllerFunction]);
 
 app.controller('exercisesController', ['$scope', exercisesControllerFunction]);
