@@ -79,37 +79,42 @@
 
   <hr>
 
+  <div ng-controller = 'madlibsController'>
+
   <h2>MadLibs Exercise</h2>
 
-  <form>
+  <form name = 'madlibsForm'>
     <div class="form-group">
       <label for="Name">Boy's Name</label>
-      <input type="text" class="form-control" ng-model = 'madlibsName' placeholder="Name">
+      <input type="text" class="form-control" ng-model = 'madlibs.madlibsName' placeholder="Name" name='boysName'>
     </div>
     <div class="form-group">
       <label for="Adjective">Adjective</label>
-      <input type="text" class="form-control" ng-model = 'madlibsAdjective' placeholder="Adjective">
+      <input type="text" class="form-control" ng-model = 'madlibs.madlibsAdjective' placeholder="Adjective">
     </div>
     <div class="form-group">
       <label for="Plural Noun">Plural Noun</label>
-      <input type="text" class="form-control" ng-model = 'madlibsPluralNoun' placeholder="Plural Noun">
+      <input type="text" class="form-control" ng-model = 'madlibs.madlibsPluralNoun' placeholder="Plural Noun">
     </div>
     <div class="form-group">
       <label for="An Animal">An Animal (Plural)</label>
-      <input type="text" class="form-control" ng-model = 'madlibsAnimal' placeholder="Any Animal">
+      <input type="text" class="form-control" ng-model = 'madlibs.madlibsAnimal' placeholder="Any Animal">
     </div>
     <div class="form-group">
       <label for="Plural Noun">Plural Noun</label>
-      <input type="text" class="form-control" ng-model = 'madlibsPluralNoun2' placeholder="Plural Noun">
+      <input type="text" class="form-control" ng-model = 'madlibs.madlibsPluralNoun2' placeholder="Plural Noun">
     </div>
     <div class="form-group">
       <label for="Verb">A verb Ending in S</label>
-      <input type="text" class="form-control" ng-model = 'madlibsVerb' placeholder="A Verb ending in S">
+      <input type="text" class="form-control" ng-model = 'madlibs.madlibsVerb' placeholder="A Verb ending in S">
     </div>
   </form>
 
-  <h3>That is {{madlibsName}}. They are so super {{madlibsAdjective}}.
-  He has so many {{madlibsPluralNoun}}. I think that he likes {{madlibsAnimal}}. But I Hate {{madlibsAnimal}}. I think he just wants to play with his {{madlibsPluralNoun2}} all day. I just want him to {{madlibsVerb}}.</h3>
+  <h3>Testing out first name = {{madlibs.madlibsName}}</h3>
+  <h3>That is {{madlibs.madlibsName}}. They are so super {{madlibs.madlibsAdjective}}.
+  He has so many {{madlibs.madlibsPluralNoun}}. I think that he likes {{madlibs.madlibsAnimal}}. But I Hate {{madlibs.madlibsAnimal}}. I think he just wants to play with his {{madlibs.madlibsPluralNoun2}} all day. I just want him to {{madlibs.madlibsVerb}}.</h3>
+
+  </div>
 
   <hr>
 

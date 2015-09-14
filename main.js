@@ -40,6 +40,12 @@ var exercisesControllerFunction = function($scope){
   $scope.timeNow = Date.now();
 };
 
+var madlibsControllerFunction = function($scope){
+  $scope.madlibs = {madlibsName : '', madlibsAdjective : '', madlibsPluralNoun : '', madlibsAnimal : '', madlibsPluralNoun2 : '', madlibsVerb : ''};
+};
+
+app.controller('madlibsController', ['$scope', madlibsControllerFunction]);
+
 app.controller('exercisesController', ['$scope', exercisesControllerFunction]);
 
 app.controller('secondController', ['$scope', secondControllerFunction]);
