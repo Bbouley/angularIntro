@@ -1,4 +1,4 @@
-angular.module('myApp', []);
+var app = angular.module('myApp', []);
 
 var mainControllerFunction = function($scope){
   $scope.names = ['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks'];
@@ -30,4 +30,18 @@ var mainControllerFunction = function($scope){
   ];
 };
 
-angular.module('myApp').controller('mainController', ['$scope', mainControllerFunction]);
+var secondControllerFunction = function($scope){
+  $scope.name = 'Severus Snape';
+};
+
+var exercisesControllerFunction = function($scope){
+  $scope.favColour = 'purple';
+  $scope.secondsInACentury = 100*365*24*60*60;
+  $scope.timeNow = Date.now();
+};
+
+app.controller('exercisesController', ['$scope', exercisesControllerFunction]);
+
+app.controller('secondController', ['$scope', secondControllerFunction]);
+
+app.controller('mainController', ['$scope', mainControllerFunction]);

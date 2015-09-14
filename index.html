@@ -183,7 +183,7 @@
 
     <h2>Camera Shop</h2>
 
-    <div ng-controller = 'mainController'>
+    <div ng-controller = 'mainController' class = 'row'>
 
      <select ng-model = 'cameraFilter'>
       <option value="rating">Rating</option>
@@ -204,6 +204,20 @@
       <img class = 'smallPic' ng-src = '{{camera.image}}'>
     </div>
 
+    </div>
+
+    <hr>
+
+    <div ng-controller = 'secondController'>
+      <h2>My Name is : {{name}}</h2>
+    </div>
+
+    <hr>
+
+    <div ng-controller = 'exercisesController'>
+      <h2>My Fave Colour is : {{favColour}}</h2>
+      <h2>Seconds in a Century : {{secondsInACentury | number}}</h2>
+      <h2>The Time Right Now is : {{timeNow |date: 'dd-MM-yyyy HH:mm:ss'}}</h2>
     </div>
 
 
