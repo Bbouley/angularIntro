@@ -62,13 +62,26 @@ var thirdControllerFunction = function($scope){
 };
 
 var fourthControllerFunction = function($scope){
+
+  $scope.player1Wins = false;
+  $scope.player2Wins = false;
   $scope.clicks = 0;
   $scope.player1Score = 0;
   $scope.player2Score = 0;
   $scope.player1Serving = true;
   $scope.player2Serving = false;
-  $scope.player1Wins = false;
-  $scope.player2Wins = false;
+
+  $scope.checkWinner = function(){
+    if($scope.player1Score >= 11){
+      $scope.player1Wins = true;
+      $scope.player1Score = 11;
+    }
+    if ($scope.player2Score >= 11){
+      $scope.player2Wins = true;
+      $scope.player2Score = 11;
+    }
+  };
+
   $scope.anyClick = function(){
     $scope.clicks += 1;
   };
@@ -89,12 +102,14 @@ var fourthControllerFunction = function($scope){
   $scope.player2Click = function(){
     $scope.player2Score += 1;
   };
-  $scope.checkWinner = function(){
-    if($scope.player1Score === 11){
-      $scope.player1Wins = true;
-    } else if ($scope.player2Score === 11){
-      $scope.player2Wins = true;
-    }
+  $scope.reset = function(){
+    $scope.clicks = 0;
+    $scope.player1Score = 0;
+    $scope.player2Score = 0;
+    $scope.player1Serving = true;
+    $scope.player2Serving = false;
+    $scope.player1Wins = false;
+    $scope.player2Wins = false;
   };
 };
 

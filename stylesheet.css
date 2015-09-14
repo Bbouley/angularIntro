@@ -15,6 +15,14 @@
   color: orange;
 }
 
+.winner{
+  background-color: green;
+}
+
+.loser{
+  background-color: red;
+}
+
 .player1{
   background-color: cyan;
   border: 20px white solid;
@@ -25,10 +33,3 @@
   border : 20px white solid;
 }
 
-.winner{
-  background-color: green;
-}
-
-.loser{
-  background-color: red;
-}
