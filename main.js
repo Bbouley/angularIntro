@@ -65,6 +65,8 @@ var fourthControllerFunction = function($scope){
 
   $scope.player1Wins = false;
   $scope.player2Wins = false;
+  $scope.player1Loses = false;
+  $scope.player2Loses = false;
   $scope.clicks = 0;
   $scope.player1Score = 0;
   $scope.player2Score = 0;
@@ -74,11 +76,13 @@ var fourthControllerFunction = function($scope){
   $scope.checkWinner = function(){
     if($scope.player1Score >= 11){
       $scope.player1Wins = true;
+      $scope.player2Loses = true;
       $scope.player1Score = 11;
     }
     if ($scope.player2Score >= 11){
       $scope.player2Wins = true;
       $scope.player2Score = 11;
+      $scope.player1Loses = true;
     }
   };
 
@@ -86,21 +90,27 @@ var fourthControllerFunction = function($scope){
     $scope.clicks += 1;
   };
   $scope.serving = function(){
-    if($scope.clicks%2 === 0){
-      if($scope.player1Serving === false){
-        $scope.player1Serving = true;
-        $scope.player2Serving = false;
-      } else if ($scope.player1Serving === true){
-        $scope.player1Serving = false;
-        $scope.player2Serving = true;
+    if($scope.player1Wins === false && $scope.player2Wins === false){
+      if($scope.clicks%2 === 0){
+        if($scope.player1Serving === false){
+          $scope.player1Serving = true;
+          $scope.player2Serving = false;
+        } else if ($scope.player1Serving === true){
+          $scope.player1Serving = false;
+          $scope.player2Serving = true;
+        }
       }
     }
   };
   $scope.player1Click = function(){
-    $scope.player1Score += 1;
+    if($scope.player1Wins === false && $scope.player2Wins === false){
+      $scope.player1Score += 1;
+   }
   };
   $scope.player2Click = function(){
-    $scope.player2Score += 1;
+    if($scope.player1Wins === false && $scope.player2Wins === false){
+      $scope.player2Score += 1;
+   }
   };
   $scope.reset = function(){
     $scope.clicks = 0;
@@ -112,6 +122,18 @@ var fourthControllerFunction = function($scope){
     $scope.player2Wins = false;
   };
 };
+
+var contactsFunction = function($scope){
+  $scope.contacts = [];
+  $scope.contact = {name: '', email: '', number: ''};
+  $scope.newContact = function(name, email, number){
+    var contact = {name: name.$modelValue, email: email.$modelValue, number: number.$modelValue};
+    $scope.contacts.push(contact);
+    $scope.contact = {name: '', email: '', number: ''};
+  };
+};
+
+app.controller('contacts', ['$scope', contactsFunction]);
 
 app.controller('fourthController', ['$scope', fourthControllerFunction]);
 
