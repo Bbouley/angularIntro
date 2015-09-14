@@ -268,17 +268,17 @@
       <form class="form-inline col-xs-12" name = 'contactForm'>
         <div class="form-group col-xs-3">
           <label for="studentName">Name : </label>
-          <input type="text" class="form-control" id="studentName" placeholder="Enter Name Here" ng-model = 'contact.name' name= 'contactName'>
+          <input type="text" class="form-control" id="studentName" placeholder="Enter Name Here" required="string" ng-model = 'contact.name' name= 'contactName'>
         </div>
         <div class="form-group col-xs-3">
           <label for="studentEmail">Email : </label>
-          <input type="email" class="form-control" id="studentEmail" placeholder="Enter Email Here" ng-model = 'contact.email' name = 'contactEmail'>
+          <input type="email" class="form-control" id="studentEmail" placeholder="Enter Email Here" required="string" ng-model = 'contact.email' name = 'contactEmail'>
         </div>
         <div class="form-group col-xs-3">
           <label for="studentNumber">Number : </label>
-          <input type="number" class="form-control" id="studentNumber" placeholder="Enter Number Here" ng-model = 'contact.number' name ='contactNumber'>
+          <input type="number" class="form-control" id="studentNumber" placeholder="Enter Number Here" required="number" ng-model = 'contact.number' name ='contactNumber'>
         </div>
-         <button type="submit" class="btn btn-default col-xs-3"  ng-click = 'newContact(contactForm.contactName, contactForm.contactEmail, contactForm.contactNumber)'>Create</button>
+         <button type="submit" ng-disabled = 'contactForm.$invalid'class="btn btn-default col-xs-3"  ng-click = 'newContact(contactForm.contactName, contactForm.contactEmail, contactForm.contactNumber)'>Create</button>
       </form>
 
 
