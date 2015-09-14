@@ -61,6 +61,45 @@ var thirdControllerFunction = function($scope){
   };
 };
 
+var fourthControllerFunction = function($scope){
+  $scope.clicks = 0;
+  $scope.player1Score = 0;
+  $scope.player2Score = 0;
+  $scope.player1Serving = true;
+  $scope.player2Serving = false;
+  $scope.player1Wins = false;
+  $scope.player2Wins = false;
+  $scope.anyClick = function(){
+    $scope.clicks += 1;
+  };
+  $scope.serving = function(){
+    if($scope.clicks%2 === 0){
+      if($scope.player1Serving === false){
+        $scope.player1Serving = true;
+        $scope.player2Serving = false;
+      } else if ($scope.player1Serving === true){
+        $scope.player1Serving = false;
+        $scope.player2Serving = true;
+      }
+    }
+  };
+  $scope.player1Click = function(){
+    $scope.player1Score += 1;
+  };
+  $scope.player2Click = function(){
+    $scope.player2Score += 1;
+  };
+  $scope.checkWinner = function(){
+    if($scope.player1Score === 11){
+      $scope.player1Wins = true;
+    } else if ($scope.player2Score === 11){
+      $scope.player2Wins = true;
+    }
+  };
+};
+
+app.controller('fourthController', ['$scope', fourthControllerFunction]);
+
 app.controller('thirdController', ['$scope', thirdControllerFunction]);
 
 app.controller('madlibsController', ['$scope', madlibsControllerFunction]);

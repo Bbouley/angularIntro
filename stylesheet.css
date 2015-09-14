@@ -14,3 +14,21 @@
 .sale{
   color: orange;
 }
+
+.player1{
+  background-color: cyan;
+  border: 20px white solid;
+}
+
+.player2{
+  background-color: cyan;
+  border : 20px white solid;
+}
+
+.winner{
+  background-color: green;
+}
+
+.loser{
+  background-color: red;
+}
